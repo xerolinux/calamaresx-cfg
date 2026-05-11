@@ -107,20 +107,6 @@ Rectangle {
             Layout.fillWidth: true
             color: mouseCancel.containsMouse ? "#e6e9ea" : "#d9dcde";
 
-             /*
-             * The ViewManager has settings -- user-controlled via the
-             * branding component, and party based on program state --
-             * whether the quit button should be enabled and visible.
-             *
-             * QML navigation *should* follow this pattern, but can also
-             * add other qualifications. For instance, you may have a
-             * "finished" module that handles quit in its own way, and
-             * want to hide the quit button then. The ViewManager has a
-             * current step and a total count, so compare them:
-             *
-             * visible: ViewManager.quitVisible && ( ViewManager.currentStepIndex < ViewManager.rowCount()-1);
-             */
-
              enabled: ViewManager.quitEnabled;
              visible: ViewManager.quitVisible && ( ViewManager.currentStepIndex < ViewManager.rowCount()-1);
 
@@ -214,68 +200,6 @@ Rectangle {
                     var component = Qt.createComponent("about.qml");
                     window = component.createObject();
                     window.show();
-                }
-            }
-        }
-    }
-}
- 72
-branding/xerolinux/calamares-sidebar.qml
-@@ -0,0 +1,72 @@
-/* Sample of QML progress tree.
-   SPDX-FileCopyrightText: 2020 Adriaan de Groot <groot@kde.org>
-   SPDX-FileCopyrightText: 2021 - 2022 Anke Boersma <demm@kaosx.us>
-   SPDX-License-Identifier: GPL-3.0-or-later
-   The progress tree (actually a list) is "horizontal" in this example,
-   with the steps going to the right.
-*/
-import io.calamares.ui 1.0
-import io.calamares.core 1.0
-
-import QtQuick 2.3
-import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.15
-
-Rectangle {
-    id: sideBar;
-    color: Branding.styleString( Branding.SidebarBackground );
-    height: 48;
-    width: parent.width
-
-    RowLayout {
-        anchors.fill: parent;
-        spacing: 2;
-
-        Item {
-            Layout.fillHeight: true;
-        }
-
-        Repeater {
-            model: ViewManager
-            Rectangle {
-                Layout.leftMargin: 0;
-                Layout.fillWidth: true;
-                Layout.alignment: Qt.AlignTop;
-                height: 42;
-                radius: 0;
-                color: Branding.styleString( index == ViewManager.currentStepIndex ? Branding.SidebarBackgroundCurrent : Branding.SidebarBackground );
-
-                Text {
-                    anchors.verticalCenter: parent.verticalCenter;
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    x: parent.x + 12;
-                    color: Branding.styleString( index == ViewManager.currentStepIndex ? Branding.SidebarTextCurrent : Branding.SidebarText );
-                    text: display;
-                    font.pointSize : index == ViewManager.currentStepIndex ? 10 : 9
-                }
-
-                Rectangle {
-                    height: 2
-                    width: 800
-                    anchors.bottom: parent.bottom;
-                    border.color: Branding.styleString(ViewManager.currentStepIndex === index ? Branding.SidebarTextCurrent : (ViewManager.currentStepIndex >= index ? Branding.SidebarTextCurrent : Branding.SidebarBackgroundCurrent))
-                    border.width: 3
-
                 }
             }
         }
