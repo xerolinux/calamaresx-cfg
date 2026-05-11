@@ -231,7 +231,7 @@ Kirigami.ScrollablePage {
                     ? positiveFieldOutlineColor : unfilledFieldOutlineColor
 
                     echoMode: TextInput.Password
-                    passwordMaskDelay: 300
+                    passwordMaskDelay: 0
                     inputMethodHints: Qt.ImhNoAutoUppercase
                 }
 
@@ -258,7 +258,7 @@ Kirigami.ScrollablePage {
                     : unfilledFieldOutlineColor
 
                     echoMode: TextInput.Password
-                    passwordMaskDelay: 300
+                    passwordMaskDelay: 0
                     inputMethodHints: Qt.ImhNoAutoUppercase
                 }
             }
@@ -341,7 +341,7 @@ Kirigami.ScrollablePage {
                     ? positiveFieldOutlineColor : unfilledFieldOutlineColor
 
                     echoMode: TextInput.Password
-                    passwordMaskDelay: 300
+                    passwordMaskDelay: 0
                     inputMethodHints: Qt.ImhNoAutoUppercase
                 }
 
@@ -366,7 +366,7 @@ Kirigami.ScrollablePage {
                     : unfilledFieldOutlineColor
 
                     echoMode: TextInput.Password
-                    passwordMaskDelay: 300
+                    passwordMaskDelay: 0
                     inputMethodHints: Qt.ImhNoAutoUppercase
                 }
             }
