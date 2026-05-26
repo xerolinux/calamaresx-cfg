@@ -16,7 +16,7 @@ Rectangle {
     id: sideBar;
     color: Branding.styleString( Branding.SidebarBackground );
     height: 48;
-    width: parent.width
+    width: parent ? parent.width : 0
 
     RowLayout {
         anchors.fill: parent;

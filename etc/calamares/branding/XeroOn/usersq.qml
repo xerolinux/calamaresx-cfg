@@ -29,8 +29,8 @@ Kirigami.ScrollablePage {
     readonly property color headerTextColor: "#FFFFFF"
     readonly property color commentsColor: "#FFFFFF"
 
-    width: parent.width
-    height: parent.height
+    width: parent ? parent.width : 0
+    height: parent ? parent.height : 0
 
     header: Kirigami.Heading {
         Layout.fillWidth: true
